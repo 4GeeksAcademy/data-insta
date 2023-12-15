@@ -26,7 +26,7 @@ class Follower(Base):
     # Notice that each column is also a normal Python instance attribute.
     id = Column(Integer, primary_key=True)
     user_from_id = Column(Integer, ForeignKey('user.id'))
-    user_to_id = Column(Integer, ForeignKey('user.id'))
+    user_to_id = Column(Integer, nullable=False)
 
 class Post(Base):
     __tablename__ = 'post'
