@@ -18,7 +18,7 @@ class User(Base):
     last_name = Column(String(250), nullable = False)
     email = Column(String(250), nullable = False)
     phone = Column(Integer)
-    user_id = Column(Integer, ForeignKey('user.id'))
+   
 
 class Follower(Base):
     __tablename__ = 'follower'
@@ -26,7 +26,7 @@ class Follower(Base):
     # Notice that each column is also a normal Python instance attribute.
     id = Column(Integer, primary_key=True)
     user_from_id = Column(Integer, ForeignKey('user.id'))
-    user_to_id = Column(Integer, nullable=False)
+    user_to_id = Column(Integer, ForeignKey('userto.id') )
 
 class Post(Base):
     __tablename__ = 'post'
